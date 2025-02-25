@@ -29,7 +29,7 @@
 }
 
 .links {
-  width: 50%;
+  width: min(50%, 575px);
   height: 80px;
   margin-top: -20px;
   display: flex;
