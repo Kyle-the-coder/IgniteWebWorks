@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import logo from "../../assets/logo/igniteLogo.png";
 import fb from "../../assets/icons/fb.png";
 import insta from "../../assets/icons/insta.png";
@@ -14,20 +14,21 @@ export function Nav() {
     { linkName: "Projects", link: "/projects" },
   ];
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = useCallback((index) => {
     setHoverIndex(index);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setHoverIndex(null);
-  };
+  }, []);
 
   useEffect(() => {
     if (hoverIndex !== null) {
-      gsap.from(".active", 0.8, {
+      gsap.from(".active", {
         scaleX: 0,
         transformOrigin: "50% 50%",
         ease: "power4.out",
+        duration: 0.8,
       });
     }
   }, [hoverIndex]);
@@ -41,7 +42,7 @@ export function Nav() {
         {links.map((link, index) => (
           <div
             onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave()}
+            onMouseLeave={handleMouseLeave}
             key={link.linkName}
             className="link-container"
           >
