@@ -10,10 +10,11 @@ body {
   flex-direction: column;
   margin: 0 auto;
   overflow-x: hidden;
+  padding: 10px;
 }
 
 .main-container {
-  width: 98%;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;

@@ -1,3 +1,4 @@
+import "./landingpage.css";
 function LandingPage() {
   return (
     <div className="landing-page-main">
