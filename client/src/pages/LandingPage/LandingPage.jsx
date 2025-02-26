@@ -4,9 +4,6 @@ function LandingPage() {
   return (
     <div className="landing-page-main">
       <Hero />
-      <div className="dummy">
-        <h1>hello</h1>
-      </div>
     </div>
   );
 }
