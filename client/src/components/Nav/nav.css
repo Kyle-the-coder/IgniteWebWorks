@@ -28,6 +28,7 @@
 .logo img {
   width: 90px;
   height: auto;
+  will-change: transform;
 }
 
 .links {

@@ -94,7 +94,7 @@ export function Nav() {
   useEffect(() => {
     if (isHamburgerActive) {
       gsap.from(".navbar-phone-dropdown-container", {
-        x: "-100%",
+        transform: "translateX(-100%)",
         duration: 1.2,
         ease: "power3.inOut",
       });

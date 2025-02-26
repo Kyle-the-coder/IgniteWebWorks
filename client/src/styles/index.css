@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   margin: 0 auto;
   position: relative;
+  clip-path: inset(-100px -10px 0px 0px);
 }
 
 @font-face {
