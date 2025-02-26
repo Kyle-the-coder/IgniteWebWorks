@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import LottieAnimation from "../LottieAnimation";
 import logo from "../../assets/logo/igniteLogo.png";
 import fb from "../../assets/icons/fb.png";
 import insta from "../../assets/icons/insta.png";
@@ -98,7 +99,37 @@ export function Nav() {
   return (
     <nav className="nav-main-container">
       {windowWidth <= 600 ? (
-        <div className="logo"></div>
+        <>
+          <div className="logo silver-bg">
+            <img src={logo} />
+          </div>
+          <div
+            className="nav-hamburger-container silver-bg"
+            onClick={() => handleActivateHamburger()}
+          >
+            <LottieAnimation
+              isAnimationActive={isAnimationActive}
+              isHamburgerActive={isHamburgerActive}
+            />
+          </div>
+
+          {isHamburgerActive && (
+            <div className="navbar-phone-dropdown-container grey-gradient-bg">
+              <div className="dropdown-links-container">
+                {links.map((link) => (
+                  <div key={link.linkName}>
+                    <h3
+                      className=" blockText dropdown-link-name font1"
+                      onClick={() => handleScrollTo(link.link)}
+                    >
+                      {link.linkName}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       ) : (
         <>
           <div className="logo silver-bg">
