@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
+  border-top-left-radius: 0%;
   position: absolute;
   top: -17px;
   left: -17px;
@@ -94,7 +95,7 @@
 
 @media only screen and (max-width: 600px) {
   .navbar-phone-dropdown-container {
-    width: 100vw;
+    width: calc(100vw - 19px);
     height: 100vh;
     display: flex;
     flex-direction: column;

@@ -24,3 +24,16 @@
   line-height: 1;
   font-size: clamp(3.5rem, 10vw, 12rem);
 }
+
+@media only screen and (max-width: 600px) {
+  .hero-main-container {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-main-container h1 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 5rem;
+  }
+}
