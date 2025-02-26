@@ -9,7 +9,6 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  overflow-x: hidden;
   padding: 10px;
 }
 
@@ -79,4 +78,8 @@ body {
 
 .silver-text {
   color: #cccccc;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

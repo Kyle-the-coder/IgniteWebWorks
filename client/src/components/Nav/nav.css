@@ -89,22 +89,13 @@
   top: -5px;
   right: -5px;
   border-radius: 0.5rem;
+  padding: 3px;
 }
 
 @media only screen and (max-width: 600px) {
-  .nav-links-container {
-    width: fit-content;
-  }
-
-  .logo-img {
-    width: 70px;
-    height: 70px;
-  }
-
   .navbar-phone-dropdown-container {
     width: 100vw;
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,87 +104,28 @@
     top: 0;
     left: 0;
     overflow: hidden;
-
-    z-index: 9;
-  }
-  .hamburger-logo-lottie-container {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .dropdown-links-container {
-    width: 100%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .dropdown-link-name {
-    font-size: 2.5rem;
-    font-family: "Font1", sans-serif;
-    cursor: pointer;
-    padding: 8px 10px;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-  .dropdown-link-name:hover {
-    color: rgb(252, 115, 30);
-
-    text-shadow: -1px 1px 1px rgb(35, 35, 35);
-  }
-}
-@media only screen and (max-width: 400px) {
-  .nav-links-container {
-    width: fit-content;
-  }
-
-  .navbar-phone-dropdown-container {
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    top: 0;
-    left: 0;
-
     z-index: 1;
   }
-  .hamburger-logo-lottie-container {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   .dropdown-links-container {
     width: 100%;
-    height: 70%;
+    height: 90%;
+    gap: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    background-color: #f57c00;
   }
+
   .dropdown-link-name {
-    font-size: 2.5rem;
-    font-family: "Font1", sans-serif;
+    font-size: 3rem;
     cursor: pointer;
-    padding: 8px 10px;
     overflow: hidden;
     transition: all 0.3s;
   }
+
   .dropdown-link-name:hover {
     color: rgb(252, 115, 30);
-
     text-shadow: -1px 1px 1px rgb(35, 35, 35);
   }
 }

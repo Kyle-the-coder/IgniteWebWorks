@@ -31,6 +31,14 @@ export function Nav() {
   }, []);
 
   useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     if (hoverIndex !== null) {
       gsap.from(".active", {
         scaleX: 0,
@@ -119,7 +127,7 @@ export function Nav() {
                 {links.map((link) => (
                   <div key={link.linkName}>
                     <h3
-                      className=" blockText dropdown-link-name font1"
+                      className="oswald-thin-font dropdown-link-name "
                       onClick={() => handleScrollTo(link.link)}
                     >
                       {link.linkName}
