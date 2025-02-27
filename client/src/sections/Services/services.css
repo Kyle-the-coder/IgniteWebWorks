@@ -6,3 +6,76 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.services-title {
+  width: 100%;
+  text-align: center;
+  height: clamp(300px, calc(30vw + 100px), 600px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.title-1 {
+  font-size: clamp(2rem, 4vw, 5rem);
+}
+
+.title-2 {
+  font-size: clamp(2.5rem, 6vw, 7rem);
+}
+
+.icons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 90%;
+}
+
+.icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.icon-container img {
+  width: 60%;
+  height: 60%;
+}
+
+.org-bg {
+  animation: changeBg 0.4s forwards;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@keyframes changeBg {
+  0% {
+    background-color: white;
+    transform: translateX(-100%);
+  }
+  100% {
+    background-color: #f57c00;
+    transform: translateX(0);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .icons-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+  }
+  .icon-container {
+    width: 100%;
+    height: 100%;
+  }
+}
