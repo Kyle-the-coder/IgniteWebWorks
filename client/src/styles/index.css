@@ -42,6 +42,10 @@ body {
 .mont-font {
   font-family: "Montserrat";
 }
+.mont-thin-font {
+  font-family: "Montserrat";
+  font-weight: 500;
+}
 
 .orange-bg {
   background-color: #f57c00;
