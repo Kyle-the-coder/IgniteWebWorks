@@ -17,13 +17,14 @@ export function Services() {
   function handleActiveIcon(index) {
     setActiveIcon(index);
   }
-  console.log(activeIcon);
+
   return (
     <section className="services-main-container grey-gradient-bg">
       <div className="services-title">
         <h1 className="orange-text oswald-font title-1">OUR SERVICES</h1>
         <h1 className="oswald-font title-2">We Offer The Following Services</h1>
       </div>
+
       <div className="icons-container">
         {icons.map((icon, index) => (
           <div
@@ -38,6 +39,12 @@ export function Services() {
             {activeIcon == index && <div className="org-bg"></div>}
           </div>
         ))}
+      </div>
+
+      <div className="vectors-info-container">
+        <div className="vector-container"></div>
+        <div className="vector-title"></div>
+        <div className="vector-info"></div>
       </div>
     </section>
   );
