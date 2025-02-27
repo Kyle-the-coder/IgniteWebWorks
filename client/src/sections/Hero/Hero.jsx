@@ -15,7 +15,7 @@ export function Hero() {
   }, []);
 
   return (
-    <div className="hero-main-container">
+    <section className="hero-main-container">
       {windowWidth <= 600 ? (
         <>
           <img src={heroBgMobile} />
@@ -32,6 +32,6 @@ export function Hero() {
           <h1 className="oswald-font white-text">Online Presence</h1>
         </>
       )}
-    </div>
+    </section>
   );
 }
