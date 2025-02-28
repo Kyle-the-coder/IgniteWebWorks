@@ -9,6 +9,7 @@ import phoneVec from "../../assets/vectors/ResponsiveAsset.png";
 import designVec from "../../assets/vectors/DesignAsset.png";
 import seoVec from "../../assets/vectors/SEOAsset.png";
 import React, { useEffect, useState } from "react";
+import { Button } from "../../components/Button/Button";
 
 export function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -65,7 +66,7 @@ export function Services() {
   useEffect(() => {
     gsap.fromTo(
       ".vectors-info-container",
-      { y: 100, opacity: 0 }, // Start position: below and invisible
+      { y: 100 }, // Start position: below and invisible
       { y: 0, opacity: 1, duration: 1, ease: "power4.out" } // End position: normal and visible
     );
   }, [activeIndex]);
@@ -114,7 +115,7 @@ export function Services() {
               {activeIndex === index && (
                 <>
                   <div className="vector-blerb">
-                    <h1 className="mont-thin-font ">{info.vectorBlerb}</h1>
+                    <h1 className="mont-thin-font">{info.vectorBlerb}</h1>
                   </div>
                   <div className="vector-grid-container">
                     <div className="vector-rect-inner white-bg">
@@ -136,6 +137,7 @@ export function Services() {
           ))}
         </div>
       </div>
+      <Button fontSize="2rem" location="/" title="GET PROPOSAL" />
     </section>
   );
 }
