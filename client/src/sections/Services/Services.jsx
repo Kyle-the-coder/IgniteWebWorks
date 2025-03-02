@@ -29,28 +29,34 @@ export function Services() {
 
   const vectorsInfo = [
     {
-      vectorBlerb: "We develop your website to your liking",
+      vectorTitle: "Web Development",
+      vectorBlerb:
+        "At Ignite Webworks, we build websites tailored to your vision, ensuring a seamless and engaging user experience. Our designs are modern, responsive, and built for performance, helping your business stand out online. With a focus on speed, SEO, and scalability, we create websites that grow with you. From e-commerce to custom functionality, we develop solutions that drive results. Your ideas fuel our expertise—let’s ignite your online presence together.",
       vectorI1: "Any Technology",
       vectorI2: "Online Payment",
       vectorI3: "Email Notifications",
       vectorI4: "Users and Authorization",
     },
     {
+      vectorTitle: "Responsive Design",
       vectorBlerb:
-        "We offer responsive design so your website can shine on all devices",
+        "At Ignite Webworks, we create responsive websites that adapt seamlessly to any device. Your site will look stunning and function flawlessly on desktops, tablets, and smartphones alike. With mobile-first design and fluid layouts, we ensure an optimal user experience everywhere. Performance, speed, and accessibility are at the core of our development. No matter where your audience is, your website will always shine.",
       vectorI1: "UI & UX Implementation",
       vectorI2: "User-Friendly",
       vectorI3: "Mobile Friendly",
       vectorI4: "Interactive Features",
     },
     {
-      vectorBlerb: "We create stunning and eye-catching visuals and layouts",
+      vectorTitle: "Creative Approaches",
+      vectorBlerb:
+        "At Ignite Webworks, we design visually stunning and intuitive websites that captivate users. Every layout is crafted for seamless navigation and a smooth user experience. We blend creativity with functionality to make every interaction effortless. Elevate your brand with a website that’s as beautiful as it is powerful.",
       vectorI1: "Simple Color Pallets",
       vectorI2: "Interactive Elements",
       vectorI3: "Entices Users",
       vectorI4: "Increases Sales",
     },
     {
+      vectorTitle: "Search Engine Optimization",
       vectorBlerb: "Our SEO will have all your clients finding you easily",
       vectorI1: "Meta Data",
       vectorI2: "Top Google Searches",
@@ -102,11 +108,6 @@ export function Services() {
                 <img src={vector.vectorImg} />
               </div>
             )}
-            {activeIndex === index && (
-              <div className="vector-title">
-                <h1 className="mont-font orange-text">{vector.vectorTitle}</h1>
-              </div>
-            )}
           </React.Fragment>
         ))}
         <div className="vector-info">
@@ -114,29 +115,34 @@ export function Services() {
             <React.Fragment key={info.vectorI1}>
               {activeIndex === index && (
                 <>
+                  <div className="vector-title">
+                    <h1 className="mont-font orange-text">
+                      {info.vectorTitle}
+                    </h1>
+                  </div>
                   <div className="vector-blerb">
-                    <h1 className="mont-thin-font">{info.vectorBlerb}</h1>
+                    <p className="mont-thin-font">{info.vectorBlerb}</p>
                   </div>
                   <div className="vector-grid-container">
                     <div className="vector-rect-inner white-bg">
-                      <h1 className="mont-thin-font">{info.vectorI1}</h1>
+                      <p className="mont-thin-font">{info.vectorI1}</p>
                     </div>
                     <div className="vector-rect white-bg">
-                      <h1 className="mont-thin-font">{info.vectorI2}</h1>
+                      <p className="mont-thin-font">{info.vectorI2}</p>
                     </div>
                     <div className="vector-rect-inner white-bg">
-                      <h1 className="mont-thin-font">{info.vectorI3}</h1>
+                      <p className="mont-thin-font">{info.vectorI3}</p>
                     </div>
                     <div className="vector-rect white-bg">
-                      <h1 className="mont-thin-font">{info.vectorI4}</h1>
+                      <p className="mont-thin-font">{info.vectorI4}</p>
                     </div>
                   </div>
                 </>
               )}
             </React.Fragment>
           ))}
+          <Button fontSize="2rem" location="/" title="GET PROPOSAL" />
         </div>
-        <Button fontSize="2rem" location="/" title="GET PROPOSAL" />
       </div>
     </section>
   );

@@ -98,9 +98,10 @@
   width: 80%;
   margin-top: 5%;
   margin-bottom: 5%;
+  text-align: center;
 }
 .vector-title h1 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
 }
 
 .vector-info {
@@ -114,11 +115,12 @@
 }
 
 .vector-blerb {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 2%;
+  text-align: center;
 }
 
 .vector-grid-container {
@@ -161,6 +163,19 @@
   .vectors-info-container {
     flex-direction: row;
   }
+
+  .vector-container img {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+
+  .vector-blerb {
+    width: 90%;
+  }
+
+  .vector-blerb p {
+    font-size: 1.2rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -179,6 +194,10 @@
 
   .vector-title {
     width: 100%;
+  }
+
+  .title-2 {
+    font-size: 2rem;
   }
 
   .vector-grid-container {
