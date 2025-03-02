@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
 }
 
 .services-title {
@@ -163,6 +164,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .services-main-container {
+    height: 1305px;
+    justify-content: space-evenly;
+  }
   .icons-container {
     grid-template-columns: repeat(2, 1fr);
     width: 90%;

@@ -136,8 +136,8 @@ export function Services() {
             </React.Fragment>
           ))}
         </div>
+        <Button fontSize="2rem" location="/" title="GET PROPOSAL" />
       </div>
-      <Button fontSize="2rem" location="/" title="GET PROPOSAL" />
     </section>
   );
 }
