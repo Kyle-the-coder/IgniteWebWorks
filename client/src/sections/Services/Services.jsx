@@ -57,7 +57,8 @@ export function Services() {
     },
     {
       vectorTitle: "Search Engine Optimization",
-      vectorBlerb: "Our SEO will have all your clients finding you easily",
+      vectorBlerb:
+        "At Ignite Webworks, we optimize your website to rank higher and reach the right audience. Our SEO strategies drive traffic, boost visibility, and keep you ahead of the competition. From keywords to site speed, we fine-tune every detail for maximum impact. Get found easily and turn visitors into loyal customers.",
       vectorI1: "Meta Data",
       vectorI2: "Top Google Searches",
       vectorI3: "User Friendly",
@@ -71,7 +72,7 @@ export function Services() {
 
   useEffect(() => {
     gsap.fromTo(
-      ".vectors-info-container",
+      [".vector-info", ".vector-container"],
       { y: 100 }, // Start position: below and invisible
       { y: 0, opacity: 1, duration: 1, ease: "power4.out" } // End position: normal and visible
     );
