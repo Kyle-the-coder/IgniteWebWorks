@@ -81,7 +81,7 @@ export function Services() {
   return (
     <section className="services-main-container grey-gradient-bg">
       <div className="services-title">
-        <h1 className="orange-text oswald-font title-1">OUR SERVICES</h1>
+        <h1 className="orange-text oswald-thin-font title-1">OUR SERVICES</h1>
         <h1 className="oswald-font title-2">We Offer The Following Services</h1>
       </div>
 
