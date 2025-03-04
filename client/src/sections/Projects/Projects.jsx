@@ -46,6 +46,19 @@ export function Projects() {
               className="dark-bg"
               style={{ opacity: isHoverIndex === 1 ? 1 : 0 }}
             ></div>
+            <div
+              className="project-img-info"
+              style={{ opacity: isHoverIndex === 1 ? 1 : 0 }}
+            >
+              <p className="oswald-font">Apple Pie Cafe</p>
+              <p className="mont-thin-font">WEBSITE</p>
+            </div>
+            <div
+              className="project-info-button"
+              style={{ opacity: isHoverIndex === 1 ? 1 : 0 }}
+            >
+              <Button fontSize="1.5rem" location="/" title="See Website" />
+            </div>
             <img src={apc} />
           </div>
           <div
@@ -57,6 +70,19 @@ export function Projects() {
               className="dark-bg"
               style={{ opacity: isHoverIndex === 2 ? 1 : 0 }}
             ></div>
+            <div
+              className="project-img-info"
+              style={{ opacity: isHoverIndex === 2 ? 1 : 0 }}
+            >
+              <p className="oswald-font">Pokemon Stay</p>
+              <p className="mont-thin-font">WEBSITE</p>
+            </div>
+            <div
+              className="project-info-button"
+              style={{ opacity: isHoverIndex === 2 ? 1 : 0 }}
+            >
+              <Button fontSize="1.5rem" location="/" title="See Website" />
+            </div>
             <img src={poke} />
           </div>
           <div
@@ -68,6 +94,19 @@ export function Projects() {
               className="dark-bg"
               style={{ opacity: isHoverIndex === 3 ? 1 : 0 }}
             ></div>
+            <div
+              className="project-img-info"
+              style={{ opacity: isHoverIndex === 3 ? 1 : 0 }}
+            >
+              <p className="oswald-font">Renewed Mobility Solutions</p>
+              <p className="mont-thin-font">WEBSITE</p>
+            </div>
+            <div
+              className="project-info-button"
+              style={{ opacity: isHoverIndex === 3 ? 1 : 0 }}
+            >
+              <Button fontSize="1.5rem" location="/" title="See Website" />
+            </div>
             <img src={rms} />
           </div>
           <div
@@ -79,10 +118,28 @@ export function Projects() {
               className="dark-bg"
               style={{ opacity: isHoverIndex === 4 ? 1 : 0 }}
             ></div>
+            <div
+              className="project-img-info"
+              style={{ opacity: isHoverIndex === 4 ? 1 : 0 }}
+            >
+              <p className="oswald-font">Royal Jewel Pavilion</p>
+              <p className="mont-thin-font">WEBSITE</p>
+            </div>
+            <div
+              className="project-info-button"
+              style={{ opacity: isHoverIndex === 4 ? 1 : 0 }}
+            >
+              <Button fontSize="1.5rem" location="/" title="See Website" />
+            </div>
             <img src={rjp} />
           </div>
         </div>
-        <Button fontSize="2.5rem" location="/" title="See More" />
+        <Button
+          fontSize="2.5rem"
+          location="/"
+          title="See More"
+          isArrow={true}
+        />
       </div>
       <div className="waves-img">
         <img src={waveB} />

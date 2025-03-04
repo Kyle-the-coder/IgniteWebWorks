@@ -77,8 +77,34 @@
   object-position: top left;
 }
 
+.project-img-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  transition: all 0.8s;
+}
+.project-info-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  z-index: 2;
+  transition: all 0.8s;
+}
+
 .dark-bg {
-  background-color: rgba(0, 0, 0, 0.848);
+  background-color: rgba(0, 0, 0, 0.873);
   width: 100%;
   height: 100%;
   position: absolute;
