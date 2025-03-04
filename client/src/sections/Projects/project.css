@@ -1,0 +1,25 @@
+.projects-main-container {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.projects-main-container::before,
+.projects-main-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: aqua;
+}
+
+.projects-main-container::before {
+  top: 0;
+}
+.projects-main-container::after {
+  bottom: 0;
+}
