@@ -58,4 +58,8 @@
   .info-body {
     text-align: center;
   }
+
+  .info-vector-container {
+    width: 70%;
+  }
 }
