@@ -71,6 +71,14 @@ body {
     #8f8f8f 100%
   );
 }
+.white-gradient-bg {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 81%,
+    #c2c2c2 97%,
+    #8f8f8f 100%
+  );
+}
 
 .orange-text {
   color: #f57c00;

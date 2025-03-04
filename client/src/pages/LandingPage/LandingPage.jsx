@@ -1,3 +1,4 @@
+import { Faq } from "../../sections/FAQ/Faq";
 import { Hero } from "../../sections/Hero/Hero";
 import { Info } from "../../sections/Info/Info";
 import { Projects } from "../../sections/Projects/Projects";
@@ -10,9 +11,7 @@ function LandingPage() {
       <Services />
       <Info />
       <Projects />
-      <div className="dummy">
-        <h1>hello</h1>
-      </div>
+      <Faq />
     </div>
   );
 }
