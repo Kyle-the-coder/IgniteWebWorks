@@ -1,10 +1,12 @@
 import "./faq.css";
 import plus from "../../assets/icons/plus.png";
 import minus from "../../assets/icons/remove.png";
+import phone from "../../assets/vectors/phone3dAsset.png";
 import { useEffect, useRef, useState } from "react";
 export function Faq() {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqRef = useRef(null);
+  const contentRefs = useRef([]);
 
   const faqInfo = [
     {
@@ -58,24 +60,37 @@ export function Faq() {
         </h1>
         <h1 className="oswald-font title-2">F.A.Q.</h1>
       </div>
-      <div className="faq-cards-container">
-        {faqInfo.map((info, index) => (
-          <div className="faq-card" key={info.title}>
-            <div className="faq-card-title">
-              <h1 className="mont-font ">{info.title}</h1>
-              {activeIndex === index ? (
-                <img src={minus} onClick={() => clearIndex()} />
-              ) : (
-                <img src={plus} onClick={() => handleIndex(index)} />
-              )}
-            </div>
-            {activeIndex === index && (
-              <div className="faq-card-info">
+      <div className="faq-card-img-container">
+        <div className="faq-cards-container">
+          {faqInfo.map((info, index) => (
+            <div className="faq-card" key={info.title}>
+              <div className="faq-card-title">
+                <h1 className="mont-font ">{info.title}</h1>
+                {activeIndex === index ? (
+                  <img src={minus} onClick={() => clearIndex()} />
+                ) : (
+                  <img src={plus} onClick={() => handleIndex(index)} />
+                )}
+              </div>
+              <div
+                className="faq-card-info"
+                ref={(el) => (contentRefs.current[index] = el)}
+                style={{
+                  maxHeight:
+                    activeIndex === index
+                      ? `${contentRefs.current[index]?.scrollHeight + 30}px`
+                      : "0px",
+                  opacity: activeIndex === index ? "1" : "0",
+                  overflow: "hidden",
+                  paddingTop: activeIndex === index ? "30px" : "0px", // Add smooth spacing
+                }}
+              >
                 <p className="mont-thin-font">{info.blurb}</p>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
+        <img src={phone} className="faq-img" />
       </div>
     </section>
   );
