@@ -1,7 +1,11 @@
 import "./faq.css";
 import plus from "../../assets/icons/plus.png";
 import minus from "../../assets/icons/remove.png";
+import { useEffect, useRef, useState } from "react";
 export function Faq() {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const faqRef = useRef(null);
+
   const faqInfo = [
     {
       title: "Why choose Ignite Webworks?",
@@ -24,8 +28,30 @@ export function Faq() {
         "Digital marketing boosts your online presence, driving more traffic to your website. It helps you reach the right audience through SEO, social media, and targeted ads. With data-driven strategies, you can convert visitors into loyal customers. A strong digital marketing plan fuels business growth and keeps you ahead of the competition.",
     },
   ];
+
+  function handleIndex(index) {
+    setActiveIndex(index);
+  }
+
+  function clearIndex() {
+    setActiveIndex(null);
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (!event.target.closest(".faq-card")) {
+        clearIndex();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <section className="faq-main-container white-gradient-bg">
+    <section className="faq-main-container white-gradient-bg" ref={faqRef}>
       <div className="faq-title">
         <h1 className="oswald-thin-font orange-text title-1">
           Frequently Asked Questions
@@ -34,9 +60,20 @@ export function Faq() {
       </div>
       <div className="faq-cards-container">
         {faqInfo.map((info, index) => (
-          <div className="faq-card">
-            <h1 className="mont-font ">{info.title}</h1>
-            <img src={plus} />
+          <div className="faq-card" key={info.title}>
+            <div className="faq-card-title">
+              <h1 className="mont-font ">{info.title}</h1>
+              {activeIndex === index ? (
+                <img src={minus} onClick={() => clearIndex()} />
+              ) : (
+                <img src={plus} onClick={() => handleIndex(index)} />
+              )}
+            </div>
+            {activeIndex === index && (
+              <div className="faq-card-info">
+                <p className="mont-thin-font">{info.blurb}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
