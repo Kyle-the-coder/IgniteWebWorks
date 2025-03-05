@@ -78,6 +78,10 @@
     margin-bottom: 100px;
   }
 
+  .faq-cards-container {
+    width: 68%;
+  }
+
   .faq-img {
     width: 30%;
     margin: 0;

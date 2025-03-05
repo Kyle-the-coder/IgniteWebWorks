@@ -1,8 +1,8 @@
-import { Faq } from "../../sections/FAQ/Faq";
-import { Hero } from "../../sections/Hero/Hero";
-import { Info } from "../../sections/Info/Info";
-import { Projects } from "../../sections/Projects/Projects";
-import { Services } from "../../sections/Services/Services";
+import { Faq } from "../../LPsections/FAQ/Faq";
+import { Hero } from "../../LPsections/Hero/Hero";
+import { Info } from "../../LPsections/Info/Info";
+import { Projects } from "../../LPsections/Projects/Projects";
+import { Services } from "../../LPsections/Services/Services";
 import "./landingpage.css";
 function LandingPage() {
   return (
