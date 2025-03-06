@@ -118,4 +118,15 @@
     height: 130px;
     justify-content: space-between;
   }
+
+  .project-img-container {
+    width: 250px;
+    height: 250px;
+  }
+  .wavesB {
+    margin-top: -5px;
+  }
+  .wavesT {
+    margin-bottom: -1px;
+  }
 }

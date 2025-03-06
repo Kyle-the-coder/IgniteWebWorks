@@ -25,7 +25,7 @@ export function Projects() {
     <section className="projects-main-container">
       <img src={waveGrad} className="waves-grad" />
       <div className="waves-img">
-        <img src={wave} />
+        <img src={wave} className="wavesT" />
       </div>
 
       <div className="projects-inner-container orange-bg">
@@ -142,7 +142,7 @@ export function Projects() {
         />
       </div>
       <div className="waves-img">
-        <img src={waveB} />
+        <img src={waveB} className="wavesB" />
       </div>
       <img src={waveBGrad} className="waves-b-grad" />
     </section>
