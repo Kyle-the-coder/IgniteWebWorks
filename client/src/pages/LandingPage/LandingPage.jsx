@@ -1,3 +1,4 @@
+import { Contact } from "../../LPsections/Contact/Contact";
 import { Faq } from "../../LPsections/FAQ/Faq";
 import { Hero } from "../../LPsections/Hero/Hero";
 import { Info } from "../../LPsections/Info/Info";
@@ -12,6 +13,7 @@ function LandingPage() {
       <Info />
       <Projects />
       <Faq />
+      <Contact />
     </div>
   );
 }

@@ -91,6 +91,20 @@
 @media only screen and (max-width: 600px) {
   .faq-card {
     text-align: center;
-    padding: 25px;
+    padding: 15px;
+  }
+
+  .faq-card img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .faq-card-title h1 {
+    font-size: 1.1rem;
+  }
+
+  .faq-card-info p {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }

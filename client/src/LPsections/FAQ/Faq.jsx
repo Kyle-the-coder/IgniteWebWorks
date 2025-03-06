@@ -65,7 +65,16 @@ export function Faq() {
           {faqInfo.map((info, index) => (
             <div className="faq-card" key={info.title}>
               <div className="faq-card-title">
-                <h1 className="mont-font ">{info.title}</h1>
+                <h1
+                  className={`mont-font ${
+                    activeIndex === index && "orange-text"
+                  } `}
+                  style={{
+                    transition: "all .4s",
+                  }}
+                >
+                  {info.title}
+                </h1>
                 {activeIndex === index ? (
                   <img src={minus} onClick={() => clearIndex()} />
                 ) : (
