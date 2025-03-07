@@ -9,6 +9,7 @@ import rjp from "../../assets/projects/RJP.png";
 import rms from "../../assets/projects/RMS.png";
 import { Button } from "../../components/Button/Button";
 import { useState } from "react";
+import { Hamburger } from "../../components/Hamburger/Hamburger";
 export function Projects() {
   const [isHover, setIsHover] = useState(false);
   const [isHoverIndex, setIsHoverIndex] = useState(null);
@@ -134,6 +135,7 @@ export function Projects() {
             <img src={rjp} />
           </div>
         </div>
+        <Hamburger />
         <Button
           fontSize="2.5rem"
           location="/"
