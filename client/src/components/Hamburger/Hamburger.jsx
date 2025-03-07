@@ -1,20 +1,20 @@
+import { useEffect, useState } from "react";
 import "./hamburger.css";
-import { useState } from "react";
-
-export function Hamburger() {
-  const [isOpened, setIsOpened] = useState(false);
-
-  console.log(isOpened);
+export function Hamburger({ isOpened }) {
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   return (
-    <button className="ham-button" onClick={() => setIsOpened(!isOpened)}>
+    <button className="ham-button">
       <svg
-        className={`hamburger ${isOpened ? "open" : "close"} ${
-          isOpened ? "start" : ""
+        className={`hamburger ${
+          hasLoaded ? (isOpened ? "open" : "close") : ""
         }`}
+        onClick={() => {
+          setHasLoaded(true);
+        }}
         fill="black"
         viewBox="0 0 100 100"
-        width="250"
+        width="50"
       >
         <line
           className="line top"
@@ -24,6 +24,8 @@ export function Hamburger() {
           y2="30"
           stroke="black"
           strokeWidth="10"
+          strokeDasharray="80"
+          strokeDashoffset="0"
         ></line>
         <line
           className="line middle"
@@ -33,6 +35,8 @@ export function Hamburger() {
           y2="50"
           stroke="black"
           strokeWidth="10"
+          strokeDasharray="80"
+          strokeDashoffset="0"
         ></line>
         <line
           className="line bottom"
@@ -42,6 +46,8 @@ export function Hamburger() {
           y2="70"
           stroke="black"
           strokeWidth="10"
+          strokeDasharray="80"
+          strokeDashoffset="0"
         ></line>
       </svg>
     </button>

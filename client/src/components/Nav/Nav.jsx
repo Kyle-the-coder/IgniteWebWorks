@@ -1,6 +1,6 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, act } from "react";
 import { useNavigate } from "react-router-dom";
-import LottieAnimation from "../LottieAnimation";
+import { Hamburger } from "../Hamburger/Hamburger";
 import logo from "../../assets/logo/igniteLogo.png";
 import fb from "../../assets/icons/fb.png";
 import insta from "../../assets/icons/insta.png";
@@ -57,7 +57,7 @@ export function Nav() {
       setIsAnimtionActive(false);
       gsap.to(".navbar-phone-dropdown-container", {
         x: "-100%",
-        duration: 1.4,
+        duration: 1.2,
         ease: "power4.in",
         onComplete: () => {
           setIsHamburgerActive(false);
@@ -87,6 +87,7 @@ export function Nav() {
       }
     } else {
       navigate(link);
+      handleActivateHamburger();
     }
     if (isHamburgerActive) handleActivateHamburger();
   }
@@ -115,10 +116,7 @@ export function Nav() {
             className="nav-hamburger-container silver-bg"
             onClick={() => handleActivateHamburger()}
           >
-            <LottieAnimation
-              isAnimationActive={isAnimationActive}
-              isHamburgerActive={isHamburgerActive}
-            />
+            <Hamburger isOpened={isAnimationActive} />
           </div>
 
           {isHamburgerActive && (

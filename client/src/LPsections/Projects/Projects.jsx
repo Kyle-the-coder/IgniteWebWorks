@@ -135,7 +135,7 @@ export function Projects() {
             <img src={rjp} />
           </div>
         </div>
-        <Hamburger />
+
         <Button
           fontSize="2.5rem"
           location="/"
