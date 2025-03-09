@@ -1,9 +1,9 @@
-import { Contact } from "../../LPsections/Contact/Contact";
-import { Faq } from "../../LPsections/FAQ/Faq";
-import { Hero } from "../../LPsections/Hero/Hero";
-import { Info } from "../../LPsections/Info/Info";
-import { Projects } from "../../LPsections/Projects/Projects";
-import { Services } from "../../LPsections/Services/Services";
+import { Contact } from "../../SectionsLanding/Contact/Contact";
+import { Faq } from "../../SectionsLanding/FAQ/Faq";
+import { Hero } from "../../SectionsLanding/Hero/Hero";
+import { Info } from "../../SectionsLanding/Info/Info";
+import { Projects } from "../../SectionsLanding/Projects/Projects";
+import { Services } from "../../SectionsLanding/Services/Services";
 function LandingPage() {
   return (
     <div className="main-page">
