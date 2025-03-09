@@ -1,7 +1,9 @@
+import { Title } from "../../components/Title/Title";
+
 function AboutMe() {
   return (
     <div className="main-page">
-      <h1>about Me page</h1>
+      <Title />
     </div>
   );
 }
