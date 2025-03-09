@@ -146,6 +146,7 @@ export function Nav() {
               <div
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => navigate(link.link)}
                 key={link.linkName}
                 className="link-container"
               >

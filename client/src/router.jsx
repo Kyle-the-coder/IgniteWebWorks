@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "./layout/MainLayout";
 import { ErrorLayout } from "./layout/ErrorLayout";
 import { landingRoute } from "./pages/LandingPage/LandingPage";
-// import { aboutRoute } from "./pages/About/About";
+import { aboutMeRoute } from "./pages/AboutMePage/AboutMe";
 // import { projectPageRoute } from "./pages/ProjectPage/ProjectPage";
 export const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorLayout />,
     children: [
       { path: "/", ...landingRoute },
-      //   { path: "/about", ...aboutRoute },
+      { path: "/about", ...aboutMeRoute },
       //   { path: "/projects", ...projectPageRoute },
     ],
   },

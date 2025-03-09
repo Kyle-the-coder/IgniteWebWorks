@@ -4,10 +4,9 @@ import { Hero } from "../../LPsections/Hero/Hero";
 import { Info } from "../../LPsections/Info/Info";
 import { Projects } from "../../LPsections/Projects/Projects";
 import { Services } from "../../LPsections/Services/Services";
-import "./landingpage.css";
 function LandingPage() {
   return (
-    <div className="landing-page-main">
+    <div className="main-page">
       <Hero />
       <Services />
       <Info />

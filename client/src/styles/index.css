@@ -22,6 +22,14 @@ body {
   clip-path: inset(-100px -10px 0px 0px);
 }
 
+.main-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @font-face {
   font-family: "Oswald";
   src: url("./Oswald-VariableFont_wght.ttf") format("truetype");
