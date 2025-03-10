@@ -3,7 +3,7 @@ import heroBg from "../../assets/titlebg.jpg";
 import heroBgMobile from "../../assets/igniteHeroMobile2.jpg";
 import "./title.css";
 
-export function Title() {
+export function Title({ title }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -16,10 +16,8 @@ export function Title() {
 
   return (
     <section className="title-main-container">
-      <img src={heroBg} />{" "}
-      <h1 className="oswald-font white-text">
-        <span className="orange-text">About</span> Me
-      </h1>
+      <img src={heroBg} />
+      {title}
     </section>
   );
 }

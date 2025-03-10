@@ -3,6 +3,7 @@ import { MainLayout } from "./layout/MainLayout";
 import { ErrorLayout } from "./layout/ErrorLayout";
 import { landingRoute } from "./pages/LandingPage/LandingPage";
 import { aboutMeRoute } from "./pages/AboutMePage/AboutMe";
+import { projectsPageRoute } from "./pages/ProjectsPage/ProjectsPage";
 // import { projectPageRoute } from "./pages/ProjectPage/ProjectPage";
 export const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", ...landingRoute },
       { path: "/about", ...aboutMeRoute },
-      //   { path: "/projects", ...projectPageRoute },
+      { path: "/projects", ...projectsPageRoute },
     ],
   },
 ]);
