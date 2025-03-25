@@ -33,19 +33,14 @@
   flex-wrap: wrap;
 }
 .project-img-display-container > h1 {
-  width: 80%;
+  width: auto;
   height: 100%;
   display: flex;
   padding: 50px;
   z-index: 2;
-  font-size: clamp(5.1rem, 9vw, 11rem);
+  font-size: clamp(5.1rem, 9vw, 9rem);
 }
 
-@media only screen and (min-width: 1200px) {
-  .project-img-display-container > h1 {
-    width: 60%;
-  }
-}
 @media only screen and (max-width: 800px) {
   .project-img-display-container {
     height: 500px;

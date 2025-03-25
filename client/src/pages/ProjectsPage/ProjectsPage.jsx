@@ -1,7 +1,7 @@
 import { ImgGrid } from "../../components/ImgGrid/ImgGrid";
-import { TextDisplay } from "../../components/TextDisplay/TextDisplay";
-import "./projectspage.css";
 import bg from "../../assets/titlebg.jpg";
+import "./projectspage.css";
+
 function ProjectsPage() {
   return (
     <div className="main-page">
@@ -12,6 +12,10 @@ function ProjectsPage() {
         <img src={bg} className="project-bg" />
         <h1 className="oswald-font white-text">Web Projects</h1>
         <ImgGrid />
+      </div>
+
+      <div className="main-page">
+        <div className="project-display"></div>
       </div>
     </div>
   );

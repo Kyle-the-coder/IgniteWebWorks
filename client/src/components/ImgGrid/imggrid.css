@@ -45,13 +45,27 @@
   margin-bottom: 30px;
 }
 
-/* Apply individual rotations to each image for a fanned look */
 .grid-img {
   width: clamp(350px, 50vw, 400px);
   height: auto;
   box-shadow: -3px 4px 10px rgba(145, 145, 145, 0.574); /* Add shadow for depth */
 }
 
+@media only screen and (min-width: 1700px) {
+  .img-grid-container-main {
+    perspective: 400px;
+  }
+  .grid-img {
+    width: 500px;
+  }
+
+  .grid-2 {
+    bottom: 15px;
+  }
+  .grid-3 {
+    bottom: -245px;
+  }
+}
 @media only screen and (max-width: 800px) {
   .img-grid-container-main {
     width: 100%;

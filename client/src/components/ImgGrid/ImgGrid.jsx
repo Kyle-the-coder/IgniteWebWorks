@@ -11,16 +11,16 @@ export function ImgGrid() {
       <div className="grid-container">
         <div className="grid-1">
           <img src={rjp} className="grid-img" />
-          <img src={rms} className="grid-img" />
+          <img src={cal} className="grid-img" />
         </div>
 
         <div className="grid-2">
-          <img src={cal} className="grid-img" />
+          <img src={rms} className="grid-img" />
           <img src={apc} className="grid-img" />
           <img src={poke} className="grid-img" />
         </div>
         <div className="grid-3">
-          <img src={poke} className="grid-img" />
+          <img src={cal} className="grid-img" />
           <img src={apc} className="grid-img" />
         </div>
       </div>
