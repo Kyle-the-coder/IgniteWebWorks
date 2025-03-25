@@ -8,6 +8,10 @@ function AboutMe() {
           <span className="orange-text">About</span> Me
         </h1>
       />
+
+      <div className="main-page grey-gradient-bg">
+        <h1>hello</h1>
+      </div>
     </div>
   );
 }
