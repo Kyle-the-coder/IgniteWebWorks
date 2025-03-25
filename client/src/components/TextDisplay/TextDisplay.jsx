@@ -1,11 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import "./landingtextdisplay.css";
+import "./textdisplay.css";
 
-export default function LandingTextDisplay() {
-  const navigate = useNavigate();
+export function TextDisplay() {
   return (
-    <div className="landing-text-display-main-container">
-      <h1 className="font1">Web Projects</h1>
+    <div className="text-display-main-container">
+      <h1 className="oswald-font">Web Projects</h1>
     </div>
   );
 }

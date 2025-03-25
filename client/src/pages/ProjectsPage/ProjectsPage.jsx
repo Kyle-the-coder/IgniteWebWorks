@@ -1,13 +1,18 @@
-import { Title } from "../../components/Title/Title";
-
+import { ImgGrid } from "../../components/ImgGrid/ImgGrid";
+import { TextDisplay } from "../../components/TextDisplay/TextDisplay";
+import "./projectspage.css";
+import bg from "../../assets/titlebg.jpg";
 function ProjectsPage() {
   return (
     <div className="main-page">
-      <Title
-        title=<h1 className="oswald-font white-text">
-          <span className="orange-text">Pro</span>jects
-        </h1>
-      />
+      <div className="project-display-top orange-bg">
+        <h1 className="oswald-font project-text charcoal-text">Web Projects</h1>
+      </div>
+      <div className="project-img-display-container orange-bg">
+        <img src={bg} className="project-bg" />
+        <h1 className="oswald-font white-text">Web Projects</h1>
+        <ImgGrid />
+      </div>
     </div>
   );
 }

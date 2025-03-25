@@ -103,3 +103,7 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+.charcoal-text {
+  color: #202020;
+}

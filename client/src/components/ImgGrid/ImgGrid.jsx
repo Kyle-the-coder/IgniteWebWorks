@@ -15,9 +15,9 @@ export function ImgGrid() {
         </div>
 
         <div className="grid-2">
-          <img src={poke} className="grid-img" />
-          <img src={apc} className="grid-img" />
           <img src={cal} className="grid-img" />
+          <img src={apc} className="grid-img" />
+          <img src={poke} className="grid-img" />
         </div>
         <div className="grid-3">
           <img src={poke} className="grid-img" />
