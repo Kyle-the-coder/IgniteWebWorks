@@ -41,20 +41,6 @@
   font-size: clamp(5.1rem, 9vw, 9rem);
 }
 
-.project-display {
-  width: 100%;
-  height: 400px;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.project-img {
-  width: 300px;
-  height: auto;
-}
-
 @media only screen and (max-width: 800px) {
   .project-img-display-container {
     height: 500px;

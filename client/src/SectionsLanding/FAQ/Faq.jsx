@@ -5,7 +5,6 @@ import phone from "../../assets/vectors/phone3dAsset.png";
 import { useEffect, useRef, useState } from "react";
 export function Faq() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const faqRef = useRef(null);
   const contentRefs = useRef([]);
 
   const faqInfo = [
@@ -53,7 +52,7 @@ export function Faq() {
   }, []);
 
   return (
-    <section className="faq-main-container white-gradient-bg" ref={faqRef}>
+    <section className="faq-main-container white-gradient-bg">
       <div className="faq-title">
         <h1 className="oswald-thin-font orange-text title-1">
           Frequently Asked Questions
@@ -91,7 +90,7 @@ export function Faq() {
                       : "0px",
                   opacity: activeIndex === index ? "1" : "0",
                   overflow: "hidden",
-                  paddingTop: activeIndex === index ? "30px" : "0px", // Add smooth spacing
+                  paddingTop: activeIndex === index ? "30px" : "0px",
                 }}
               >
                 <p className="mont-thin-font">{info.blurb}</p>
