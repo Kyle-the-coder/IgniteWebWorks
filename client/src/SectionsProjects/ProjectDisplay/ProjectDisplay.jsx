@@ -44,9 +44,10 @@ export function ProjectDisplay() {
           <div
             key={info.title}
             className="project-display charcoal-bg white-text"
-            onClick={() =>
-              activeIndex === index ? clearIndex() : handleIndex(index)
-            }
+            onClick={(e) => {
+              e.stopPropagation();
+              activeIndex === index ? clearIndex() : handleIndex(index);
+            }}
           >
             <div className="project-dis-title">
               <h1>{info.title}</h1>
