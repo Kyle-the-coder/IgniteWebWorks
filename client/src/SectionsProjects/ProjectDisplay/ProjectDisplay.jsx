@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./projectdisplay.css";
 import rjp from "../../assets/rjp.png";
 import rms from "../../assets/rms.png";
+import apc from "../../assets/apc.png";
+import poke from "../../assets/poke.png";
 
 export function ProjectDisplay() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -10,6 +12,8 @@ export function ProjectDisplay() {
   const projectInfo = [
     { title: "Renewed Mobility Solutions", img: rms },
     { title: "Royal Jewel Pavillion", img: rjp },
+    { title: "Apple Pie Cafe", img: apc },
+    { title: "Pokemon Stay", img: poke },
   ];
 
   function handleIndex(index) {
@@ -22,7 +26,7 @@ export function ProjectDisplay() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (!event.target.closest(".faq-card")) {
+      if (!event.target.closest(".project-display")) {
         clearIndex();
       }
     }
@@ -32,7 +36,7 @@ export function ProjectDisplay() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+  console.log(activeIndex);
   return (
     <div className="main-page white-bg">
       {projectInfo.map((info, index) => {
@@ -40,6 +44,9 @@ export function ProjectDisplay() {
           <div
             key={info.title}
             className="project-display charcoal-bg white-text"
+            onClick={() =>
+              activeIndex === index ? clearIndex() : handleIndex(index)
+            }
           >
             <div className="project-dis-title">
               <h1>{info.title}</h1>
