@@ -56,7 +56,7 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  padding-top: 0; /* Starts at 0 so it doesn't push content */
+  padding-top: 0;
   transition: max-height 0.4s ease-in-out, opacity 0.2s ease-in-out,
     padding-top 0.4s ease-in-out;
 }

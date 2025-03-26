@@ -36,22 +36,42 @@ export function ProjectDisplay() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  console.log(activeIndex);
+
   return (
-    <div className="main-page white-bg">
+    <div className="main-page dark-grey-gradient-bg">
       {projectInfo.map((info, index) => {
         return (
           <div
             key={info.title}
-            className="project-display charcoal-bg white-text"
+            className="project-display white-bg "
             onClick={(e) => {
               e.stopPropagation();
               activeIndex === index ? clearIndex() : handleIndex(index);
             }}
           >
             <div className="project-dis-title">
-              <h1>{info.title}</h1>
-              <img src={info.img} className="project-img" />
+              <h1
+                className={`mont-font ${
+                  activeIndex === index && "orange-text"
+                }`}
+              >
+                {info.title}
+              </h1>
+              <div></div>
+              <img
+                src={info.img}
+                style={{
+                  transition: "all .8s",
+                  borderRadius: "10px",
+                  backgroundClip: "padding-box",
+                  outline:
+                    activeIndex === index
+                      ? "4px solid #f57c00"
+                      : "2px solid black",
+                  outlineOffset: activeIndex === index ? "0px" : "3px",
+                }}
+                width={`${activeIndex === index ? "500px" : "300px"}`}
+              />
             </div>
 
             <div

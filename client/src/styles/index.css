@@ -79,6 +79,14 @@ body {
     #8f8f8f 100%
   );
 }
+.dark-grey-gradient-bg {
+  background: linear-gradient(
+    to bottom,
+    rgb(215, 215, 215) 21%,
+    #a5a5a5 87%,
+    #878787 100%
+  );
+}
 .white-gradient-bg {
   background: linear-gradient(
     to bottom,
