@@ -4,16 +4,41 @@ import rjp from "../../assets/rjp.png";
 import rms from "../../assets/rms.png";
 import apc from "../../assets/apc.png";
 import poke from "../../assets/poke.png";
+import { Button } from "../../components/Button/Button";
 
 export function ProjectDisplay() {
   const [activeIndex, setActiveIndex] = useState(null);
   const contentRefs = useRef([]);
 
   const projectInfo = [
-    { title: "Renewed Mobility Solutions", img: rms },
-    { title: "Royal Jewel Pavillion", img: rjp },
-    { title: "Apple Pie Cafe", img: apc },
-    { title: "Pokemon Stay", img: poke },
+    {
+      title: "Renewed Mobility Solutions",
+      img: rms,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    },
+    {
+      title: "Royal Jewel Pavillion",
+      img: rjp,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    },
+    {
+      title: "Apple Pie Cafe",
+      img: apc,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    },
+    {
+      title: "Pokemon Stay",
+      img: poke,
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+    },
   ];
 
   function handleIndex(index) {
@@ -61,7 +86,7 @@ export function ProjectDisplay() {
               <img
                 src={info.img}
                 style={{
-                  transition: "all .8s",
+                  transition: "all 1s",
                   borderRadius: "10px",
                   backgroundClip: "padding-box",
                   outline:
@@ -70,7 +95,7 @@ export function ProjectDisplay() {
                       : "2px solid black",
                   outlineOffset: activeIndex === index ? "0px" : "3px",
                 }}
-                width={`${activeIndex === index ? "500px" : "300px"}`}
+                width={`${activeIndex === index ? "450px" : "300px"}`}
               />
             </div>
 
@@ -80,17 +105,47 @@ export function ProjectDisplay() {
               style={{
                 maxHeight:
                   activeIndex === index
-                    ? `${contentRefs.current[index]?.scrollHeight + 30}px`
+                    ? `${contentRefs.current[index]?.scrollHeight + 700}px`
                     : "0px",
                 opacity: activeIndex === index ? "1" : "0",
                 overflow: "hidden",
                 paddingTop: activeIndex === index ? "30px" : "0px",
               }}
             >
-              <p>
-                fjkld jkl ;fd jl;fd l;fds jlfjdkshfuio h hioew oinf ioejw jiof;
-                jio; jeio jio;e jios;j io;ej io;ejiso; jeio;s
-              </p>
+              <div className="project-exp-info">
+                <h2 className="mont-font">Company Description:</h2>
+                <p className="mont-font">{info.desc}</p>
+              </div>
+              <div className="project-exp-info">
+                <h2 className="mont-font">UI & UX:</h2>
+                <p className="mont-font">{info.desc}</p>
+              </div>
+              <div className="project-exp-imgs">
+                <div className="project-exp-img">
+                  <img src={info.img} />
+                  <h4 className="oswald-thin-font">Landing Page</h4>
+                </div>
+                <div className="project-exp-img">
+                  <img src={info.img} />
+                  <h4 className="oswald-thin-font">Calendar</h4>
+                </div>{" "}
+                <div className="project-exp-img">
+                  <img src={info.img} />
+                  <h4 className="oswald-thin-font">Landing Page</h4>
+                </div>
+              </div>
+              <div className="project-exp-info end">
+                <h2 className="mont-font">Goal:</h2>
+                <p className="mont-font">{info.desc}</p>
+              </div>
+              <div className="project-exp-button">
+                <Button
+                  fontSize="2.5rem"
+                  location="/"
+                  title="See Website"
+                  isArrow={false}
+                />
+              </div>
             </div>
           </div>
         );
