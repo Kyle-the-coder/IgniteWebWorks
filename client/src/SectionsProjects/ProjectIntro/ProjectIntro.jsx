@@ -1,5 +1,5 @@
 import { ImgGrid } from "../../components/ImgGrid/ImgGrid";
-import bg from "../../assets/titlebg.jpg";
+import bg from "../../assets/titlebg2.jpg";
 import "./projectintro.css";
 export function ProjectIntro() {
   return (

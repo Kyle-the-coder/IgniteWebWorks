@@ -48,18 +48,18 @@
   .project-img-display-container > h1 {
     width: 100%;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 10px;
     text-align: center;
-    font-size: 4.3rem;
+    font-size: 4rem;
   }
 
   .project-text {
-    font-size: 3.5rem;
+    font-size: 2rem;
     right: 0;
-    bottom: -20px;
+    bottom: -12px;
   }
 
   .project-display-top {
-    height: 150px;
+    height: 130px;
   }
 }
