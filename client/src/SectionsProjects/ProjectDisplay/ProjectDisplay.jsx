@@ -5,9 +5,11 @@ import rms from "../../assets/rms.png";
 import apc from "../../assets/apc.png";
 import poke from "../../assets/poke.png";
 import { Button } from "../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 export function ProjectDisplay() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const navigate = useNavigate();
   const contentRefs = useRef([]);
 
   const projectInfo = [
@@ -42,7 +44,22 @@ export function ProjectDisplay() {
   ];
 
   function handleIndex(index) {
-    setActiveIndex(index);
+    const element = document.getElementById(`${index}`);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    setTimeout(() => {
+      if (index === activeIndex) {
+        setActiveIndex(null);
+      } else {
+        setActiveIndex(index);
+      }
+    }, [300]);
   }
 
   function clearIndex() {
@@ -68,10 +85,10 @@ export function ProjectDisplay() {
         return (
           <div
             key={info.title}
+            id={index}
             className="project-display white-bg "
-            onClick={(e) => {
-              e.stopPropagation();
-              activeIndex === index ? clearIndex() : handleIndex(index);
+            onClick={() => {
+              handleIndex(index);
             }}
           >
             <div className="project-dis-title">
