@@ -1,5 +1,39 @@
-.project-dis-title {
+.project-display {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.project-quote {
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.project-quote > h1 {
+  font-size: clamp(3rem, 4vw, 7rem);
   text-align: center;
+}
+.carousel {
+  width: 100%;
+  margin: 0 auto;
+}
+.project-dis-title {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-dis-title > img {
+  max-width: 300px;
 }
 
 .project-display-info {
@@ -26,20 +60,21 @@
 .project-exp-imgs {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
-.project-exp-imgs > img {
-  width: 250px;
-  height: auto;
+
+.carousel-2 {
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .project-exp-img {
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 .project-exp-img > img {
   width: 100%;
@@ -57,4 +92,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .project-dis-title {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-dis-title > h1 {
+    margin-bottom: 20px;
+  }
 }

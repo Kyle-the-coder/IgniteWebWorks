@@ -1,18 +1,13 @@
-import { useEffect, useRef, useState } from "react";
 import "./projectdisplay.css";
 import rjp from "../../assets/rjp.png";
 import rms from "../../assets/rms.png";
 import apc from "../../assets/apc.png";
 import poke from "../../assets/poke.png";
 import { Button } from "../../components/Button/Button";
-import { useNavigate } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-export function ProjectDisplay() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const navigate = useNavigate();
-  const contentRefs = useRef([]);
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+export function ProjectDisplay() {
   const projectInfo = [
     {
       title: "Renewed Mobility Solutions",
@@ -44,130 +39,76 @@ export function ProjectDisplay() {
     },
   ];
 
-  function handleIndex(index) {
-    const element = document.getElementById(`${index}`);
-
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-
-    setTimeout(() => {
-      if (index === activeIndex) {
-        setActiveIndex(null);
-      } else {
-        setActiveIndex(index);
-      }
-    }, [300]);
-  }
-
-  function clearIndex() {
-    setActiveIndex(null);
-  }
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (!event.target.closest(".project-display")) {
-        clearIndex();
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className="main-page dark-grey-gradient-bg">
-      {projectInfo.map((info, index) => {
-        return (
-          <div
-            key={info.title}
-            id={index}
-            className="project-display white-bg "
-            onClick={() => {
-              handleIndex(index);
-            }}
-          >
-            <div className="project-dis-title">
-              <h1
-                className={`mont-font ${
-                  activeIndex === index && "orange-text"
-                }`}
-              >
-                {info.title}
-              </h1>
-              <div></div>
-              <img
-                src={info.img}
-                style={{
-                  transition: "all 1s",
-                  borderRadius: "10px",
-                  backgroundClip: "padding-box",
-                  outline:
-                    activeIndex === index
-                      ? "4px solid #f57c00"
-                      : "2px solid black",
-                  outlineOffset: activeIndex === index ? "0px" : "3px",
-                }}
-                width={`${activeIndex === index ? "450px" : "300px"}`}
-              />
-            </div>
-
+      <div className="project-quote">
+        <h1 className="oswald-thin-font">
+          <span className="oswald-font orange-text">Ignite Webworks</span> wants
+          to create your dream website to boost your business and your
+          confidence
+        </h1>
+      </div>
+      <Carousel showStatus={false} infiniteLoop={true} className="carousel">
+        {projectInfo.map((info, index) => {
+          return (
             <div
-              className="project-display-info"
-              ref={(el) => (contentRefs.current[index] = el)}
-              style={{
-                maxHeight:
-                  activeIndex === index
-                    ? `${contentRefs.current[index]?.scrollHeight + 700}px`
-                    : "0px",
-                opacity: activeIndex === index ? "1" : "0",
-                overflow: "hidden",
-                paddingTop: activeIndex === index ? "30px" : "0px",
-              }}
+              key={info.title}
+              id={index}
+              className="project-display white-bg "
             >
-              <div className="project-exp-info">
-                <h2 className="mont-font">Company Description:</h2>
-                <p className="mont-font">{info.desc}</p>
+              <div className="project-dis-title">
+                <h1 className={`mont-font `}>{info.title}</h1>
+
+                <img src={info.img} />
               </div>
-              <div className="project-exp-info">
-                <h2 className="mont-font">UI & UX:</h2>
-                <p className="mont-font">{info.desc}</p>
-              </div>
-              <div className="project-exp-imgs">
-                <div className="project-exp-img">
-                  <img src={info.img} />
-                  <h4 className="oswald-thin-font">Landing Page</h4>
+
+              <div className="project-display-info">
+                <div className="project-exp-info">
+                  <h2 className="mont-font">Company Description:</h2>
+                  <p className="mont-font">{info.desc}</p>
                 </div>
-                <div className="project-exp-img">
-                  <img src={info.img} />
-                  <h4 className="oswald-thin-font">Calendar</h4>
-                </div>{" "}
-                <div className="project-exp-img">
-                  <img src={info.img} />
-                  <h4 className="oswald-thin-font">Landing Page</h4>
+                <div className="project-exp-info">
+                  <h2 className="mont-font">UI & UX:</h2>
+                  <p className="mont-font">{info.desc}</p>
                 </div>
-              </div>
-              <div className="project-exp-info end">
-                <h2 className="mont-font">Goal:</h2>
-                <p className="mont-font">{info.desc}</p>
-              </div>
-              <div className="project-exp-button">
-                <Button
-                  fontSize="2.5rem"
-                  location="/"
-                  title="See Website"
-                  isArrow={false}
-                />
+
+                <Carousel
+                  showArrows={true}
+                  showStatus={false}
+                  infiniteLoop={true}
+                  className="carousel-2 dark-grey-gradient-bg"
+                >
+                  <div className="project-exp-img">
+                    <img src={info.img} />
+                    <h4 className="oswald-thin-font legend">Landing Page</h4>
+                  </div>
+                  <div className="project-exp-img">
+                    <img src={info.img} />
+                    <h4 className="oswald-thin-font legend">Calendar</h4>
+                  </div>
+                  <div className="project-exp-img">
+                    <img src={info.img} />
+                    <h4 className="oswald-thin-font legend">Landing Page</h4>
+                  </div>
+                </Carousel>
+
+                <div className="project-exp-info end">
+                  <h2 className="mont-font">Goal:</h2>
+                  <p className="mont-font">{info.desc}</p>
+                </div>
+                <div className="project-exp-button">
+                  <Button
+                    fontSize="2.5rem"
+                    location="/"
+                    title="See Website"
+                    isArrow={false}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </Carousel>
     </div>
   );
 }
