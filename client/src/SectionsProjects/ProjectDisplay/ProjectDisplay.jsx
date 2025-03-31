@@ -76,6 +76,7 @@ export function ProjectDisplay() {
                   showArrows={true}
                   showStatus={false}
                   infiniteLoop={true}
+                  showThumbs={true}
                   className="carousel-2 dark-grey-gradient-bg"
                 >
                   <div className="project-exp-img">
