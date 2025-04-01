@@ -115,3 +115,17 @@ body {
 .charcoal-text {
   color: #202020;
 }
+
+.flex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

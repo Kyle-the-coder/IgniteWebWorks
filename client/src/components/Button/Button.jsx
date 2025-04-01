@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import arrow from "../../assets/icons/right-arrow.png";
 import "./button.css";
 
-export function Button({ title, fontSize, location, isArrow }) {
+export function Button({ title, fontSize, location, isArrow, marginTop }) {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
 
@@ -13,6 +13,7 @@ export function Button({ title, fontSize, location, isArrow }) {
       className="button-main orange-bg"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      style={{ marginTop: marginTop }}
     >
       <h2
         style={{

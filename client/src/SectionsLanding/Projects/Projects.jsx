@@ -141,6 +141,7 @@ export function Projects() {
           location="/"
           title="See More"
           isArrow={true}
+          marginTop="50px"
         />
       </div>
       <div className="waves-img">

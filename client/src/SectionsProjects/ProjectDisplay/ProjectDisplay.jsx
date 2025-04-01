@@ -15,6 +15,11 @@ export function ProjectDisplay() {
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+
+      img2: "",
+      title2: "Calendar",
+      img3: "",
+      title3: "Contact",
     },
     {
       title: "Royal Jewel Pavillion",
@@ -22,6 +27,11 @@ export function ProjectDisplay() {
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+
+      img2: "",
+      title2: "Product Page",
+      img3: "",
+      title3: "Services Page",
     },
     {
       title: "Apple Pie Cafe",
@@ -29,6 +39,11 @@ export function ProjectDisplay() {
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+
+      img2: "",
+      title2: "Review Section",
+      img3: "",
+      title3: "Review Form",
     },
     {
       title: "Pokemon Stay",
@@ -36,6 +51,11 @@ export function ProjectDisplay() {
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       ui: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
       goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+
+      img2: "",
+      title2: "Game Page",
+      img3: "",
+      title3: "Captured Page",
     },
   ];
 
@@ -56,54 +76,54 @@ export function ProjectDisplay() {
               id={index}
               className="project-display white-bg "
             >
-              <div className="project-dis-title">
-                <h1 className={`mont-font `}>{info.title}</h1>
-
-                <img src={info.img} />
+              <div className="project-display-title orange-bg">
+                <h1 className="oswald-font ">{info.title}</h1>
               </div>
-
-              <div className="project-display-info">
-                <div className="project-exp-info">
-                  <h2 className="mont-font">Company Description:</h2>
-                  <p className="mont-font">{info.desc}</p>
-                </div>
-                <div className="project-exp-info">
-                  <h2 className="mont-font">UI & UX:</h2>
-                  <p className="mont-font">{info.desc}</p>
+              <div className="flex">
+                <div className="project-display-img-container">
+                  <img src={info.img} />
                 </div>
 
-                <Carousel
-                  showArrows={true}
-                  showStatus={false}
-                  infiniteLoop={true}
-                  showThumbs={true}
-                  className="carousel-2 dark-grey-gradient-bg"
-                >
-                  <div className="project-exp-img">
-                    <img src={info.img} />
-                    <h4 className="oswald-thin-font legend">Landing Page</h4>
+                <div className="project-display-info white-gradient-bg">
+                  <div className="project-exp-info">
+                    <h2 className="mont-font">Company Description:</h2>
+                    <p className="mont-font">{info.desc}</p>
                   </div>
-                  <div className="project-exp-img">
-                    <img src={info.img} />
-                    <h4 className="oswald-thin-font legend">Calendar</h4>
-                  </div>
-                  <div className="project-exp-img">
-                    <img src={info.img} />
-                    <h4 className="oswald-thin-font legend">Landing Page</h4>
-                  </div>
-                </Carousel>
 
-                <div className="project-exp-info end">
-                  <h2 className="mont-font">Goal:</h2>
-                  <p className="mont-font">{info.desc}</p>
-                </div>
-                <div className="project-exp-button">
-                  <Button
-                    fontSize="2.5rem"
-                    location="/"
-                    title="See Website"
-                    isArrow={false}
-                  />
+                  <div className="project-exp-info">
+                    <h2 className="mont-font">Goal:</h2>
+                    <p className="mont-font">{info.desc}</p>
+                  </div>
+
+                  <Carousel
+                    showArrows={true}
+                    showStatus={false}
+                    infiniteLoop={true}
+                    showThumbs={true}
+                    className="carousel-2 "
+                  >
+                    <div className="project-exp-img">
+                      <img src={info.img} />
+                      <h4 className="oswald-thin-font legend">Landing Page</h4>
+                    </div>
+                    <div className="project-exp-img">
+                      <img src={info.img} />
+                      <h4 className="oswald-thin-font legend">{info.title2}</h4>
+                    </div>
+                    <div className="project-exp-img">
+                      <img src={info.img} />
+                      <h4 className="oswald-thin-font legend">{info.title3}</h4>
+                    </div>
+                  </Carousel>
+
+                  <div className="project-exp-button">
+                    <Button
+                      fontSize="2rem"
+                      location="/"
+                      title="See Website"
+                      isArrow={false}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
