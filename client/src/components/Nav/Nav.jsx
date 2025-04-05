@@ -125,7 +125,7 @@ export function Nav() {
                 {links.map((link) => (
                   <div key={link.linkName}>
                     <h3
-                      className="oswald-thin-font dropdown-link-name "
+                      className="oswald-font dropdown-link-name "
                       onClick={() => handleScrollTo(link.link)}
                     >
                       {link.linkName}
@@ -150,7 +150,7 @@ export function Nav() {
                 key={link.linkName}
                 className="link-container"
               >
-                <h1 className="oswald-thin-font">{link.linkName}</h1>
+                <h1 className="oswald-font">{link.linkName}</h1>
                 {hoverIndex === index && <div className="active"></div>}
               </div>
             ))}
