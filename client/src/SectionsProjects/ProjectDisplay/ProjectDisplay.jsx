@@ -84,7 +84,7 @@ export function ProjectDisplay() {
                   <img src={info.img} />
                 </div>
 
-                <div className="project-display-info white-gradient-bg">
+                <div className="project-display-info charcoal-bg white-text">
                   <div className="project-exp-info">
                     <h2 className="mont-font">Company Description:</h2>
                     <p className="mont-font">{info.desc}</p>

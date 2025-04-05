@@ -1,5 +1,6 @@
 import { Outlet, useLocation, useNavigation } from "react-router-dom";
 import { Nav } from "../components/Nav/Nav";
+import { Contact } from "../components/Contact/Contact";
 import "../styles/index.css";
 export function MainLayout() {
   const { state } = useNavigation();
@@ -14,6 +15,7 @@ export function MainLayout() {
           <Outlet />
         </div>
       )}
+      <Contact />
     </div>
   );
 }

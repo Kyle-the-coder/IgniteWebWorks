@@ -1,4 +1,3 @@
-import { Contact } from "../../SectionsLanding/Contact/Contact";
 import { Faq } from "../../SectionsLanding/FAQ/Faq";
 import { Hero } from "../../SectionsLanding/Hero/Hero";
 import { Info } from "../../SectionsLanding/Info/Info";
@@ -12,7 +11,6 @@ function LandingPage() {
       <Info />
       <Projects />
       <Faq />
-      <Contact />
     </div>
   );
 }

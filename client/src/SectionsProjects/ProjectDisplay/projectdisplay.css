@@ -22,7 +22,6 @@
   text-align: center;
 }
 .carousel {
-  width: 70%;
   margin: 0 auto;
 }
 
@@ -99,4 +98,45 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .project-display-info {
+    width: 100%;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .project-display-img-container {
+    width: 100%;
+    border-bottom-left-radius: 0px;
+  }
+
+  .project-exp-info {
+    margin-top: 20px;
+  }
+  .project-exp-info > p {
+    width: 95%;
+    margin-top: 5px;
+  }
+
+  .project-exp-button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .project-display {
+    height: fit-content;
+    padding: 10px;
+  }
+
+  .carousel-2 {
+    width: 95%;
+    margin-top: 40px;
+  }
+
+  .project-display-title {
+    padding: 10px;
+  }
 }
