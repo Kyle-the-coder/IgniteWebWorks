@@ -1,4 +1,3 @@
-import "./projectdisplay.css";
 import rjp from "../../assets/rjp.png";
 import rms from "../../assets/rms.png";
 import apc from "../../assets/apc.png";
@@ -6,6 +5,7 @@ import poke from "../../assets/poke.png";
 import { Button } from "../../components/Button/Button";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./projectdisplay.css";
 
 export function ProjectDisplay() {
   const projectInfo = [
@@ -68,7 +68,12 @@ export function ProjectDisplay() {
           confidence
         </h1>
       </div>
-      <Carousel showStatus={false} infiniteLoop={true} className="carousel">
+      <Carousel
+        showStatus={false}
+        infiniteLoop={true}
+        swipeable={false}
+        className="carousel"
+      >
         {projectInfo.map((info, index) => {
           return (
             <div
@@ -99,7 +104,7 @@ export function ProjectDisplay() {
                     showArrows={true}
                     showStatus={false}
                     infiniteLoop={true}
-                    showThumbs={true}
+                    showThumbs={false}
                     className="carousel-2 "
                   >
                     <div className="project-exp-img">
@@ -122,6 +127,7 @@ export function ProjectDisplay() {
                       location="/"
                       title="See Website"
                       isArrow={false}
+                      marginTop="50px"
                     />
                   </div>
                 </div>
