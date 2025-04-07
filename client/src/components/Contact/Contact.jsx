@@ -4,6 +4,8 @@ import logo from "../../assets/logo/IgniteLogo3d.png";
 import phone from "../../assets/icons/telephone.png";
 import plane from "../../assets/icons/paper.png";
 import gps from "../../assets/icons/gps.png";
+import up from "../../assets/icons/up-arrow.png";
+import { scrollToSection } from "../SmoothScroll";
 export function Contact() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -16,6 +18,12 @@ export function Contact() {
   }, []);
   return (
     <section id="contact" className="contact-main-container charcoal-bg">
+      <img
+        src={up}
+        className="nav-icon"
+        alt="to top"
+        onClick={() => scrollToSection("#nav")}
+      />
       {windowWidth <= 700 ? (
         <>
           {" "}

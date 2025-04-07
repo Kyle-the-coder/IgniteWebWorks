@@ -5,8 +5,16 @@
   align-items: center;
   padding: 20px;
   color: white;
+  position: relative;
 }
 
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
 .contact-container {
   width: 33%;
   height: 100%;
@@ -92,5 +100,9 @@
   .contact-logo {
     width: 60%;
     margin-top: 40px;
+  }
+  .nav-icon {
+    top: 1%;
+    right: 2%;
   }
 }
