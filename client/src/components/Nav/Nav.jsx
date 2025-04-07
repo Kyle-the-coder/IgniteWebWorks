@@ -73,7 +73,7 @@ export function Nav() {
         handleActivateHamburger();
         setTimeout(() => {
           scrollToSection(link);
-        }, 2000);
+        }, 1300);
       } else {
         navigate(link);
         handleActivateHamburger();
@@ -101,7 +101,7 @@ export function Nav() {
   }, [isHamburgerActive]);
 
   return (
-    <nav className="nav-main-container">
+    <nav id="nav" className="nav-main-container">
       {windowWidth <= 600 ? (
         <>
           <div className="logo silver-bg">
