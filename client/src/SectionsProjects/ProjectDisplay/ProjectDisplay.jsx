@@ -72,6 +72,7 @@ export function ProjectDisplay() {
         showStatus={false}
         infiniteLoop={true}
         swipeable={false}
+        showThumbs={false}
         className="carousel"
       >
         {projectInfo.map((info, index) => {

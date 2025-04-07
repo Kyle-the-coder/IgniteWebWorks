@@ -15,7 +15,7 @@ export function Contact() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <section className="contact-main-container charcoal-bg">
+    <section id="contact" className="contact-main-container charcoal-bg">
       {windowWidth <= 700 ? (
         <>
           {" "}

@@ -6,6 +6,7 @@ import fb from "../../assets/icons/fb.png";
 import insta from "../../assets/icons/insta.png";
 import gsap from "gsap";
 import "./nav.css";
+import { scrollToSection } from "../SmoothScroll";
 
 export function Nav() {
   const [hoverIndex, setHoverIndex] = useState(null);
@@ -67,29 +68,23 @@ export function Nav() {
   }
 
   function handleScrollTo(link) {
-    if (link.startsWith("#")) {
+    if (isHamburgerActive) {
       if (link === "#contact") {
-        scrollToSection(link);
-      } else if (location.pathname !== "/") {
-        navigate("/");
-        if (isHamburgerActive) {
-          handleActivateHamburger();
-          setTimeout(() => {
-            scrollToSection(link);
-          }, 2000);
-        } else if (!isHamburgerActive) {
-          setTimeout(() => {
-            scrollToSection(link);
-          }, 500);
-        }
+        handleActivateHamburger();
+        setTimeout(() => {
+          scrollToSection(link);
+        }, 2000);
       } else {
-        scrollToSection(link);
+        navigate(link);
+        handleActivateHamburger();
       }
     } else {
-      navigate(link);
-      handleActivateHamburger();
+      if (link === "#contact") {
+        scrollToSection(link);
+      } else {
+        navigate(link);
+      }
     }
-    if (isHamburgerActive) handleActivateHamburger();
   }
 
   useEffect(() => {
@@ -122,13 +117,17 @@ export function Nav() {
           {isHamburgerActive && (
             <div className="navbar-phone-dropdown-container grey-gradient-bg">
               <div className="dropdown-links-container">
-                {links.map((link) => (
+                {links.map((link, index) => (
                   <div key={link.linkName}>
                     <h3
                       className="oswald-font dropdown-link-name "
-                      onClick={() => handleScrollTo(link.link)}
+                      onClick={() => {
+                        handleMouseEnter(index);
+                        handleScrollTo(link.link);
+                      }}
                     >
                       {link.linkName}
+                      {hoverIndex === index && <div className="active"></div>}
                     </h3>
                   </div>
                 ))}
@@ -146,7 +145,7 @@ export function Nav() {
               <div
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => navigate(link.link)}
+                onClick={() => handleScrollTo(link.link)}
                 key={link.linkName}
                 className="link-container"
               >
