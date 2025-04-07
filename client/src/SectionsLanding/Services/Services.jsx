@@ -13,6 +13,8 @@ import { Button } from "../../components/Button/Button";
 
 export function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
   const icons = [
     { iconImg: devImg, iconName: "Development" },
     { iconImg: phoneImg, iconName: "Responsive" },
@@ -67,16 +69,42 @@ export function Services() {
   ];
 
   function handleActiveIndex(index) {
-    setActiveIndex(index);
+    if (index === activeIndex || isAnimating) return;
+
+    setIsAnimating(true);
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        setActiveIndex(index);
+        setIsAnimating(false);
+      },
+    });
+
+    tl.to([".vector-info", ".vector-container"], {
+      y: 100,
+      opacity: 0,
+      duration: 0.4,
+      ease: "power4.inOut",
+    });
   }
 
   useEffect(() => {
-    gsap.fromTo(
+    const tl = gsap.timeline();
+    tl.fromTo(
       [".vector-info", ".vector-container"],
-      { y: 100 }, // Start position: below and invisible
-      { y: 0, opacity: 1, duration: 1, ease: "power4.out" } // End position: normal and visible
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: "power4.out", delay: 0.1 }
     );
   }, [activeIndex]);
+
+  useEffect(() => {
+    // Preload all vector images
+    const vectorImgs = [devVec, phoneVec, designVec, seoVec];
+    vectorImgs.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   return (
     <section className="services-main-container grey-gradient-bg">
@@ -96,7 +124,7 @@ export function Services() {
             <h1 className="oswald-font" style={{ zIndex: 2 }}>
               {icon.iconName}
             </h1>
-            {activeIndex == index && <div className="org-bg"></div>}
+            {activeIndex === index && <div className="org-bg"></div>}
           </div>
         ))}
       </div>
@@ -105,43 +133,46 @@ export function Services() {
         {vectors.map((vector, index) => (
           <React.Fragment key={vector.vectorTitle}>
             {activeIndex === index && (
-              <div className="vector-container">
+              <div className="vector-container" key={vector.vectorImg}>
                 <img src={vector.vectorImg} />
               </div>
             )}
           </React.Fragment>
         ))}
-        <div className="vector-info">
-          {vectorsInfo.map((info, index) => (
-            <React.Fragment key={info.vectorI1}>
-              {activeIndex === index && (
-                <>
-                  <div className="vector-title">
-                    <h1 className="mont-font orange-text">
-                      {info.vectorTitle}
-                    </h1>
-                  </div>
-                  <div className="vector-blerb">
-                    <p className="mont-thin-font">{info.vectorBlerb}</p>
-                  </div>
-                  <div className="vector-grid-container">
-                    <div className="vector-rect-inner white-bg">
-                      <p className="mont-thin-font">{info.vectorI1}</p>
-                    </div>
-                    <div className="vector-rect white-bg">
-                      <p className="mont-thin-font">{info.vectorI2}</p>
-                    </div>
-                    <div className="vector-rect-inner white-bg">
-                      <p className="mont-thin-font">{info.vectorI3}</p>
-                    </div>
-                    <div className="vector-rect white-bg">
-                      <p className="mont-thin-font">{info.vectorI4}</p>
-                    </div>
-                  </div>
-                </>
-              )}
-            </React.Fragment>
-          ))}
+
+        <div className="vector-info" key={vectorsInfo[activeIndex].vectorTitle}>
+          <div className="vector-title">
+            <h1 className="mont-font orange-text">
+              {vectorsInfo[activeIndex].vectorTitle}
+            </h1>
+          </div>
+          <div className="vector-blerb">
+            <p className="mont-thin-font">
+              {vectorsInfo[activeIndex].vectorBlerb}
+            </p>
+          </div>
+          <div className="vector-grid-container">
+            <div className="vector-rect-inner white-bg">
+              <p className="mont-thin-font">
+                {vectorsInfo[activeIndex].vectorI1}
+              </p>
+            </div>
+            <div className="vector-rect white-bg">
+              <p className="mont-thin-font">
+                {vectorsInfo[activeIndex].vectorI2}
+              </p>
+            </div>
+            <div className="vector-rect-inner white-bg">
+              <p className="mont-thin-font">
+                {vectorsInfo[activeIndex].vectorI3}
+              </p>
+            </div>
+            <div className="vector-rect white-bg">
+              <p className="mont-thin-font">
+                {vectorsInfo[activeIndex].vectorI4}
+              </p>
+            </div>
+          </div>
           <Button
             fontSize="2rem"
             location="/"
