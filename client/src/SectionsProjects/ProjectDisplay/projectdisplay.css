@@ -10,6 +10,7 @@
   justify-content: center;
   margin-bottom: 30px;
   margin-top: 30px;
+  box-shadow: -2px 2px 15px rgba(0, 0, 0, 0.194);
 }
 
 .project-quote {
@@ -23,6 +24,7 @@
 }
 .carousel {
   margin: 0 auto;
+  margin-bottom: 150px;
 }
 .carousel .control-arrow {
   opacity: 1 !important;

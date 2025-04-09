@@ -98,7 +98,6 @@ export function Services() {
   }, [activeIndex]);
 
   useEffect(() => {
-    // Preload all vector images
     const vectorImgs = [devVec, phoneVec, designVec, seoVec];
     vectorImgs.forEach((src) => {
       const img = new Image();

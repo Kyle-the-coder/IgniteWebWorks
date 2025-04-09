@@ -60,7 +60,7 @@ export function ProjectDisplay() {
   ];
 
   return (
-    <div className="main-page dark-grey-gradient-bg">
+    <div className="main-page grey-gradient-bg">
       <div className="project-quote">
         <h1 className="oswald-thin-font">
           <span className="oswald-font orange-text">Ignite Webworks</span> wants
